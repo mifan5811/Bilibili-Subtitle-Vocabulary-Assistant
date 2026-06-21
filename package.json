@@ -1,0 +1,14 @@
+{
+  "name": "bilibili-subtitle-vocabulary-assistant",
+  "version": "0.7.0",
+  "private": true,
+  "description": "A Chrome and Edge extension for learning English vocabulary from Bilibili subtitles.",
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "package": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/package.ps1",
+    "dictionary": "python scripts/build_ecdict.py ecdict.csv dist/dictionary --limit 80000"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

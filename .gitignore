@@ -1,0 +1,35 @@
+# Local build and test caches
+.cache/
+.agents/
+
+# Generated release archives
+*.zip
+
+# Local browser profiles
+.chrome-profile/
+.edge-profile/
+
+# Logs and editor files
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Package manager directories
+node_modules/
+
+# ECDICT source data
+ecdict.csv
+stardict.csv
+*.7z
+
+# Legacy prototype files that are not used by the current extension
+/src/
+/public/
+/popup.html
+/tsconfig.json
+/vite.config.ts
+/package-dist.bat
+/launch-chrome.bat
+/launch-edge.bat

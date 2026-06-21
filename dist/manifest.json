@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "Bilibili Subtitle Vocabulary Assistant",
+  "version": "0.7.0",
+  "description": "Collect vocabulary from Bilibili subtitles and review it with contextual spelling and FSRS.",
+  "permissions": ["storage", "activeTab", "tabs"],
+  "host_permissions": [
+    "https://www.bilibili.com/*",
+    "https://api.bilibili.com/*",
+    "https://*.hdslb.com/*"
+  ],
+  "action": {
+    "default_title": "Bilibili Vocabulary",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "assets/background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.bilibili.com/video/*"],
+      "js": ["assets/page-hook.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": ["https://www.bilibili.com/video/*"],
+      "js": ["assets/content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["dictionary/*.json"],
+      "matches": ["https://www.bilibili.com/*"]
+    }
+  ]
+}
